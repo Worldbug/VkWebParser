@@ -9,6 +9,24 @@ services:
       POSTGRES_PASSWORD: example
     ports:
       - 5432:5432
+  
+  nginx:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - /$PWD/nginx/content://usr/share/nginx:ro
+      - /$PWD/nginx/nginx.conf://etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+
+  # app:
+  #   image: app:latest
+  #   restart: always
+  #   volumes:
+  #     - ./app:/app/
+  #   ports:
+  #     - "5000:5000"
+
 
   # Гуй на время разработки, что бы пальцы
   # В консоли не ломать
