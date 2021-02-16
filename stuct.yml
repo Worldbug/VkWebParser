@@ -1,0 +1,25 @@
+# Парсер ВК - веб приложение
+
+# В БД хранятся спаршенные данные
+─ db:
+  - postgres:
+    - users
+    - logs
+
+# Само приложение
+─ flask:
+  - pages:
+    - Login
+    - Parser
+    - History
+
+# Прокся для приложения что бы масштабировать
+─ nginx:
+  - Redirect
+
+# Описание структуры
+─ stuct.yml
+
+# Докер под сборку софтины
+─ dockerer-compose.yml:
+  - Build all systems

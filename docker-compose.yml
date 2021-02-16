@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  # БД для хранения спаршеных данных
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+
+  # Гуй на время разработки, что бы пальцы
+  # В консоли не ломать
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
